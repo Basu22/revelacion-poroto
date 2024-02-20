@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+
+@mixin estiloFuenteQuintessential {
+    font-family: "Quintessential", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@mixin titulosH2{
+    text-align: center;
+    @include mobile-styles{
+        font-size: 2rem;
+    }
+    @include desktop-styles{
+        font-size: 3rem;
+    }
+}
+
+@mixin textos{
+    text-align: center;
+    @include mobile-styles{
+        font-size: 1rem;
+    }
+    @include desktop-styles{
+        font-size: 1.5rem;
+    }
+}
+
+
+@mixin subtitulosH2{
+    text-align: center;
+    @include mobile-styles{
+        font-size: 1.5rem;
+    }
+    @include desktop-styles{
+        font-size: 2rem;
+    }
+}
+
+/* Distancia entre cajas y entre textos de una misma caja */
+@mixin distancaCajas{
+    padding: 20px 0px;
+    gap: 20px 0px;
+}
+
+
+/* MEDIDAS PARA RESPONSIVE */
+@mixin desktop-styles {
+    @media only screen and (min-width: 768px) {
+      @content; // Inserta los estilos definidos dentro del mixin
+    }
+}
+
+@mixin mobile-styles {
+    @media only screen and (max-width: 768px) {
+      @content; // Inserta los estilos definidos dentro del mixin
+    }
+}
+/* FIN DE MEDIDAS PARA RESPONSIVE */

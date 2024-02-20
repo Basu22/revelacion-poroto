@@ -1,0 +1,453 @@
+@import '../../sass/variables.scss';
+
+
+@include desktop-styles {
+
+    .mainTemplate{
+        display: grid;
+        grid-template-areas: 
+        "genero info mapa";
+        grid-template-columns: 20vw 60vw 20vw;
+        background-position: center;
+        background-size: cover;
+        padding: 30px 0px;
+        @include estiloFuenteQuintessential;
+
+
+
+        .articuloInfo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 30px;
+            background-color: rgba($color: #ffffff, $alpha: 0.5);
+            box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.516);
+            
+            .seccionBienvenida{
+                display: grid;
+                grid-template-areas: 
+                "textoTitulo"
+                "textoSubtitulo"
+                "imagenGenero";
+                justify-content: center;
+                justify-items: center;
+                gap: 50px 0px;
+
+                .textoTitulo{
+                    grid-area: textoTitulo;
+                    @include titulosH2;
+                }
+                .textoSubtitulo{
+                    grid-area: textoSubtitulo;
+                    @include textos;
+                }
+                .imgGenero{
+                    grid-area: imagenGenero;
+                }
+            }
+        
+            .seccionIndicaciones{
+                padding: 20px 0px;
+                display: grid;
+                grid-template-areas: 
+                "primerIndicacion"
+                "segundaIndicacion";
+                gap: 20px 0px;
+                justify-content: center;
+                justify-items: center;
+
+                .primerIndicacion{
+                    grid-area: primerIndicacion;
+                    @include textos;
+                }
+                
+                .segundaIndicacion{
+                    grid-area: segundaIndicacion;
+                    @include textos;
+                }
+
+            }
+            
+            .seccionDia{
+                display: grid;
+                grid-template-areas: 
+                "titulo titulo titulo titulo  titulo"
+                "dia numero mes ano hora"
+                "icnDia . . . icnHora";
+                justify-content: center;
+                align-items: center;
+                @include distancaCajas;
+
+                .tituloDia{
+                    grid-area: titulo;
+                    @include titulosH2;
+                }
+                .textoDia{
+                    grid-area: dia;
+                    @include subtitulosH2;
+                    border-right: 5px solid black;
+                }
+                .textoDiaNumero{
+                    grid-area: numero;
+                    @include textos;
+                }
+                .textoMes{
+                    grid-area: mes;
+                    @include textos;
+                }
+                .textoAno{
+                    grid-area: ano;
+                    @include textos;
+                }
+                .textoHora{
+                    grid-area: hora;
+                    @include subtitulosH2;
+                    border-left: 5px solid black;
+                }
+                .icnDia{
+                    grid-area: icnDia;
+                    @include subtitulosH2;
+                }
+                .icnHora{
+                    grid-area: icnHora ;
+                    @include subtitulosH2;
+                }
+            }
+
+            .seccionDireccion{
+                padding: 30px 0px;
+                display: grid;
+                grid-template-areas: 
+                "titulo         titulo"
+                "direccion     direccion"
+                "genero         mapa"
+                "nombre         nombre";
+                justify-content: center;
+                align-items: center;
+                gap: 20px 0px;
+                .tituloDireccion{
+                    grid-area: titulo;
+                    @include titulosH2;
+                }
+                .linkDireccion{
+                    grid-area: direccion;
+                    text-decoration: none;
+                    text-align: center;
+                    font-size: 1.5rem;
+                }
+                .seccionImgDireccion{
+                    .imgDireccion{
+                        width: 100%;
+                        box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.516);
+                    }
+                }
+            }
+
+            .seccionRequisitos{
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                .tituloRequisitos{
+                    @include titulosH2;
+                }
+                .seccionCamiseta{
+                    display: grid;
+                    grid-template-areas: 
+                    "camiseta texto";
+                    justify-content: center;
+                    align-items: center;
+                    @include distancaCajas;
+                    width: 100%;
+                    .imgCamiseta{
+                        width: 100%;
+                    }
+                    .textoCamiseta{
+                        grid-area: texto;
+                        @include textos;
+                    }
+                }
+                
+                .seccionComida{
+                    width: 100%;
+                    display: grid;
+                    grid-template-areas: 
+                    "textoMate mate"
+                    "budin textoBudin";
+                    justify-content: center;
+                    align-items: center;
+                    
+                    .imgMate{
+                        grid-area: mate;
+                        width: 100%;
+                    }
+                    
+                    .textoMate{
+                        grid-area: textoMate;
+                        @include textos
+                    }
+                    
+                    .imgBudin{
+                        grid-area: budin;
+                        width: 90%;
+                    }
+
+                    .textoBudin{
+                        grid-area: textoBudin;
+                        @include textos
+                    }
+
+                }
+                
+            }
+
+            .seccionSaludo{
+                @include distancaCajas;
+                
+                .tituloSaludo{
+                    grid-area: titulo;
+                    @include titulosH2;
+                }
+
+                
+            }
+
+            .seccionReacciones{
+                @include distancaCajas;
+                .textoReacciones{
+                    @include textos;
+                }
+                .videoReacciones{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+@include mobile-styles {
+
+    .mainTemplate{
+        display: grid;
+        grid-template-areas: 
+        ". info .";
+        grid-template-columns: 5vw 90vw 5vw;
+        justify-content: center;
+        background-position: center;
+        background-size: cover;
+        @include estiloFuenteQuintessential;
+        padding: 30px 0px;
+        
+        
+        .articuloInfo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba($color: #ffffff, $alpha: 0.5);
+            padding: 0px 15px;
+            box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.516);
+            .seccionBienvenida{
+                @include distancaCajas;
+                display: grid;
+                grid-template-areas: 
+                "textoTitulo"
+                "textoSubtitulo"
+                "imagenGenero";
+                justify-content: center;
+                justify-items: center;
+
+
+                .textoTitulo{
+                    grid-area: textoTitulo;
+                    @include titulosH2;
+                }
+                .textoSubtitulo{
+                    @include textos;
+                    grid-area: textoSubtitulo;
+                }
+                .imgGenero{
+                    grid-area: imagenGenero;
+                }
+            }
+        
+            .seccionIndicaciones{
+                @include distancaCajas;
+                display: grid;
+                grid-template-areas: 
+                "primerIndicacion"
+                "segundaIndicacion";
+
+
+                .primerIndicacion{
+                    grid-area: primerIndicacion;
+                    @include textos;
+                }
+                
+                .segundaIndicacion{
+                    grid-area: segundaIndicacion;
+                    @include textos;
+                }
+
+            }
+            
+            .seccionDia{
+                @include distancaCajas;
+                display: grid;
+                grid-template-areas: 
+                "titulo titulo  titulo"
+                ".     numero  ."
+                "dia     mes     hora"
+                "icnDia     ano     icnHora";
+                justify-content: center;
+                align-items: center;
+
+                .tituloDia{
+                    grid-area: titulo;
+                    @include titulosH2;
+                }
+                .textoDia{
+                    @include subtitulosH2;
+                    grid-area: dia;
+                    border-right: 5px solid black;
+                }
+                .textoDiaNumero{
+                    grid-area: numero;
+                    @include textos;
+                }
+                .textoMes{
+                    grid-area: mes;
+                    @include textos;
+                }
+                .textoAno{
+                    grid-area: ano;
+                    @include textos;
+                }
+                .textoHora{
+                    @include subtitulosH2;
+                    grid-area: hora;
+                    border-left: 5px solid black;
+                }
+                .icnDia{
+                    @include subtitulosH2;
+                    grid-area: icnDia;
+                }
+                .icnHora{
+                    @include subtitulosH2;
+                    grid-area: icnHora ;
+                }
+            }
+
+            .seccionDireccion{
+                @include distancaCajas;
+                display: grid;
+                grid-template-areas: 
+                "titulo"
+                "direccion"
+                "mapa"
+                "genero"         
+                "nombre";
+                justify-content: center;
+                align-items: center;
+
+                .tituloDireccion{
+                    grid-area: titulo;
+                    @include titulosH2;
+                }
+                .linkDireccion{
+                    grid-area: direccion;
+                    text-decoration: none;
+                    text-align: center;
+                    @include textos;
+                }
+                .seccionImgDireccion{
+                    .imgDireccion{
+                        width: 100%;
+                        box-shadow: 10px 20px 50px rgba(0, 0, 0, 0.516);
+                    }
+                }
+            }
+            
+            .seccionRequisitos{
+                .tituloRequisitos{
+                    @include titulosH2;
+                }
+                .seccionCamiseta{
+                    display: grid;
+                    grid-template-areas: 
+                    "camiseta texto";
+                    grid-template-columns: auto 50vw;
+                    justify-content: center;
+                    align-items: center;
+                    @include distancaCajas;
+                    width: 100%;
+                    .imgCamiseta{
+                        width: 100%;
+                        
+                    }
+                    .textoCamiseta{
+                        grid-area: texto;
+                        @include textos;
+                    }
+                }
+                
+                .seccionComida{
+                    width: 100%;
+                    display: grid;
+                    grid-template-areas: 
+                    "textoMate mate"
+                    "budin textoBudin";
+                    grid-template-columns: 40vw auto ;
+                    justify-content: center;
+                    align-items: center;
+                    @include distancaCajas;
+                    
+                    .imgMate{
+                        grid-area: mate;
+                        width: 100%;
+                    }
+                    
+                    .textoMate{
+                        grid-area: textoMate;
+                        @include textos
+                    }
+                    
+                    .imgBudin{
+                        grid-area: budin;
+                        width: 90%;
+                    }
+
+                    .textoBudin{
+                        grid-area: textoBudin;
+                        @include textos
+                    }
+
+                }
+                
+            }
+
+            .seccionSaludo{
+                @include distancaCajas;
+                
+                .tituloSaludo{
+                    grid-area: titulo;
+                    @include titulosH2;
+                }
+
+                
+            }
+
+            .seccionReacciones{
+                @include distancaCajas;
+                .textoReacciones{
+                    @include textos;
+                }
+                .videoReacciones{
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+
+}

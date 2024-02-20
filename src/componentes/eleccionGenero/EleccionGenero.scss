@@ -1,0 +1,154 @@
+@import '../../sass/variables.scss';
+
+@include desktop-styles {
+
+  .mainPrincipal{
+    display: grid;
+    grid-template-areas: 
+    ". varon ."
+    ". fraseMedio ."
+    ". mujer .";
+    grid-template-rows: 45vh 10vh 45vh;
+    grid-template-columns:10vw 80vw 10vw;
+    background-image: url('./img/fondoDragones.jpg') ;
+    background-position: center;
+    background-size: cover;
+
+
+    .contenedorVaron{
+      grid-area: varon ;
+      font-size: 5rem;
+      display: flex;
+      justify-content: center;
+      @include estiloFuenteQuintessential;
+      .linkChimuelo{
+        display: grid;
+        grid-template-areas: 
+        "img texto";
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        .textoVaron{
+          grid-area: texto;
+        }
+        .imgVaron{
+          grid-area: img;
+        }
+      }
+    }
+
+    .fraseMedio{
+      grid-area: fraseMedio;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      @include estiloFuenteQuintessential;
+      text-align: center;
+    }
+
+    .contenedorMujer{
+      grid-area: mujer ;
+      font-size: 5rem;
+      display: flex;
+      justify-content: center;
+      @include estiloFuenteQuintessential;
+      .linkFuria{
+        display: grid;
+        grid-template-areas: 
+        "texto img";
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        .textoMujer{
+          grid-area: texto;
+        }
+        .imgMujer{
+          grid-area: img;
+        }
+      }
+    }
+  }
+
+}
+
+@include mobile-styles {
+
+  .mainPrincipal{
+    overflow: hidden;
+    display: grid;
+    grid-template-areas: 
+    ". varon ."
+    ". fraseMedio ."
+    ". mujer .";
+    grid-template-rows: 45vh 10vh 45vh;
+    grid-template-columns:10vw 80vw 10vw;
+    background-image: url('./img/fondoDragones.jpg') ;
+    background-position: center;
+    background-size: cover;
+
+
+    .contenedorVaron{
+      grid-area: varon ;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      @include estiloFuenteQuintessential;
+      .linkChimuelo{
+        display: grid;
+        grid-template-areas: 
+        "img" 
+        "texto";
+        justify-items: center;
+        align-content: center;
+        text-decoration: none;
+        color: black;
+        .textoVaron{
+          grid-area: texto;
+        }
+        .imgVaron{
+          grid-area: img;
+        }
+      }
+    }
+
+    .fraseMedio{
+      grid-area: fraseMedio;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      @include estiloFuenteQuintessential;
+      text-align: center;
+    }
+
+    .contenedorMujer{
+      grid-area: mujer ;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      @include estiloFuenteQuintessential;
+      .linkFuria{
+        display: grid;
+        grid-template-areas: 
+        "img" 
+        "texto";
+        justify-items: center;
+        align-content: center;
+        text-decoration: none;
+        color: black;
+        .textoMujer{
+          grid-area: texto;
+        }
+        .imgMujer{
+          grid-area: img;
+        }
+      }
+    }
+  }
+  
+}
